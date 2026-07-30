@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Consent Banner Nest
- * Plugin URI:        https://www.gunjanjaswal.me
+ * Plugin URI:        https://github.com/gunjanjaswal/Consent-Banner-Nest
  * Description:       A lightweight, privacy-first GDPR cookie consent banner with category controls and automatic script blocking until the visitor opts in.
  * Version:           1.0.0
  * Requires at least: 5.8
