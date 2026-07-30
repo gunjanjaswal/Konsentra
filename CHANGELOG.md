@@ -22,4 +22,10 @@ First public release.
 - Translation ready with a bundled `.pot` file.
 - Clean uninstall on single site and multisite.
 
+### Fixed
+- Distinct Plugin URI and Author URI in the plugin header.
+- Escaped the privacy-page dropdown label to satisfy output-escaping checks.
+- Prefixed template and uninstall variables with the plugin prefix.
+- Dropped the discouraged `load_plugin_textdomain()` call; translations load automatically.
+
 [1.0.0]: https://github.com/gunjanjaswal/Consent-Banner-Nest/releases/tag/v1.0.0
