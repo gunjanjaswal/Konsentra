@@ -1,4 +1,4 @@
-=== Consent Pilot ===
+=== Consent Banner Nest ===
 Contributors: gunjanjaswal
 Donate link: https://ko-fi.com/gunjanjaswal
 Tags: gdpr, cookie consent, cookie banner, privacy, consent
@@ -13,7 +13,7 @@ A lightweight, privacy-first GDPR cookie consent banner with category controls a
 
 == Description ==
 
-Consent Pilot gives your visitors a clear choice about the cookies your site uses, and helps you stay on the right side of GDPR and the ePrivacy rules. It ships with a clean, customisable banner, granular cookie categories, and a script blocker that holds tracking code back until someone actually agrees to it.
+Consent Banner Nest gives your visitors a clear choice about the cookies your site uses, and helps you stay on the right side of GDPR and the ePrivacy rules. It ships with a clean, customisable banner, granular cookie categories, and a script blocker that holds tracking code back until someone actually agrees to it.
 
 No account, no external service, no phoning home. Everything runs on your own site.
 
@@ -35,26 +35,26 @@ Tag any script you want held back until consent like this:
 
 `<script type="text/plain" data-cp-category="analytics" src="https://example.com/tag.js"></script>`
 
-When the visitor grants the "analytics" category, Consent Pilot swaps it for a real script tag and runs it. The same works for inline scripts and for the `functional` and `marketing` categories.
+When the visitor grants the "analytics" category, Consent Banner Nest swaps it for a real script tag and runs it. The same works for inline scripts and for the `functional` and `marketing` categories.
 
 **Developer hooks**
 
-A `consentPilot:updated` event fires on `document` every time consent changes, so your own code can react:
+A `consentBannerNest:updated` event fires on `document` every time consent changes, so your own code can react:
 
-`document.addEventListener( 'consentPilot:updated', function ( e ) { console.log( e.detail ); } );`
+`document.addEventListener( 'consentBannerNest:updated', function ( e ) { console.log( e.detail ); } );`
 
 == Installation ==
 
-1. Upload the `consent-pilot` folder to `/wp-content/plugins/`, or install it from the Plugins screen in your dashboard.
+1. Upload the `consent-banner-nest` folder to `/wp-content/plugins/`, or install it from the Plugins screen in your dashboard.
 2. Activate the plugin through the Plugins menu in WordPress.
-3. Go to Settings, then Consent Pilot, to set your text, colours, and categories.
+3. Go to Settings, then Consent Banner Nest, to set your text, colours, and categories.
 4. Tag any third-party scripts you want to gate behind consent (see the Description).
 
 == Frequently Asked Questions ==
 
 = Does this make my site GDPR compliant on its own? =
 
-No plugin can do that by itself. Consent Pilot gives you the consent banner, category controls, and script blocking you need, but compliance also depends on your privacy policy, how you handle data, and the services you use. Treat it as one important piece, not the whole picture.
+No plugin can do that by itself. Consent Banner Nest gives you the consent banner, category controls, and script blocking you need, but compliance also depends on your privacy policy, how you handle data, and the services you use. Treat it as one important piece, not the whole picture.
 
 = Does it block Google Analytics or Facebook Pixel automatically? =
 
@@ -66,11 +66,11 @@ Only if you switch on consent logging, and even then it stores a hashed IP addre
 
 = Is it translation ready? =
 
-Yes. A `.pot` file is included in the `languages` folder and every string uses the `consent-pilot` text domain.
+Yes. A `.pot` file is included in the `languages` folder and every string uses the `consent-banner-nest` text domain.
 
 = How do visitors change their choice later? =
 
-Add the `[consent_pilot_settings]` shortcode anywhere, for example in your footer or privacy page, and it renders a link that reopens the preferences panel.
+Add the `[consent_banner_nest_settings]` shortcode anywhere, for example in your footer or privacy page, and it renders a link that reopens the preferences panel.
 
 == Screenshots ==
 
@@ -86,4 +86,4 @@ Add the `[consent_pilot_settings]` shortcode anywhere, for example in your foote
 == Upgrade Notice ==
 
 = 1.0.0 =
-First release of Consent Pilot.
+First release of Consent Banner Nest.

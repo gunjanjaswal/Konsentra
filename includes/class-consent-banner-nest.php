@@ -2,43 +2,43 @@
 /**
  * Main plugin bootstrap class.
  *
- * @package ConsentPilot
+ * @package ConsentBannerNest
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Consent_Pilot
+ * Class Consent_Banner_Nest
  *
  * Wires the moving parts together and exposes a single instance.
  */
-final class Consent_Pilot {
+final class Consent_Banner_Nest {
 
 	/**
 	 * Single instance of the class.
 	 *
-	 * @var Consent_Pilot|null
+	 * @var Consent_Banner_Nest|null
 	 */
 	private static $instance = null;
 
 	/**
 	 * Front-end handler.
 	 *
-	 * @var Consent_Pilot_Frontend
+	 * @var Consent_Banner_Nest_Frontend
 	 */
 	public $frontend;
 
 	/**
 	 * Admin handler.
 	 *
-	 * @var Consent_Pilot_Admin|null
+	 * @var Consent_Banner_Nest_Admin|null
 	 */
 	public $admin = null;
 
 	/**
 	 * Retrieve the single instance.
 	 *
-	 * @return Consent_Pilot
+	 * @return Consent_Banner_Nest
 	 */
 	public static function instance() {
 		if ( null === self::$instance ) {
@@ -61,7 +61,7 @@ final class Consent_Pilot {
 	 * @return void
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'consent-pilot', false, dirname( CONSENT_PILOT_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'consent-banner-nest', false, dirname( CONSENT_BANNER_NEST_BASENAME ) . '/languages' );
 	}
 
 	/**
@@ -70,10 +70,10 @@ final class Consent_Pilot {
 	 * @return void
 	 */
 	public function init_components() {
-		$this->frontend = new Consent_Pilot_Frontend();
+		$this->frontend = new Consent_Banner_Nest_Frontend();
 
-		if ( is_admin() && class_exists( 'Consent_Pilot_Admin' ) ) {
-			$this->admin = new Consent_Pilot_Admin();
+		if ( is_admin() && class_exists( 'Consent_Banner_Nest_Admin' ) ) {
+			$this->admin = new Consent_Banner_Nest_Admin();
 		}
 	}
 
@@ -83,12 +83,12 @@ final class Consent_Pilot {
 	 * @return array
 	 */
 	public static function get_settings() {
-		$saved = get_option( CONSENT_PILOT_OPTION, array() );
+		$saved = get_option( CONSENT_BANNER_NEST_OPTION, array() );
 
 		if ( ! is_array( $saved ) ) {
 			$saved = array();
 		}
 
-		return wp_parse_args( $saved, Consent_Pilot_Settings::get_defaults() );
+		return wp_parse_args( $saved, Consent_Banner_Nest_Settings::get_defaults() );
 	}
 }

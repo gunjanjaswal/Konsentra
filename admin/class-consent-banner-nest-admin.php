@@ -2,15 +2,15 @@
 /**
  * Admin: settings page, registration and asset loading.
  *
- * @package ConsentPilot
+ * @package ConsentBannerNest
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Consent_Pilot_Admin
+ * Class Consent_Banner_Nest_Admin
  */
-class Consent_Pilot_Admin {
+class Consent_Banner_Nest_Admin {
 
 	/**
 	 * Settings page hook suffix.
@@ -26,7 +26,7 @@ class Consent_Pilot_Admin {
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		add_filter( 'plugin_action_links_' . CONSENT_PILOT_BASENAME, array( $this, 'action_links' ) );
+		add_filter( 'plugin_action_links_' . CONSENT_BANNER_NEST_BASENAME, array( $this, 'action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'row_meta' ), 10, 2 );
 	}
 
@@ -37,10 +37,10 @@ class Consent_Pilot_Admin {
 	 */
 	public function add_menu() {
 		$this->hook = add_options_page(
-			__( 'Consent Pilot', 'consent-pilot' ),
-			__( 'Consent Pilot', 'consent-pilot' ),
+			__( 'Consent Banner Nest', 'consent-banner-nest' ),
+			__( 'Consent Banner Nest', 'consent-banner-nest' ),
 			'manage_options',
-			'consent-pilot',
+			'consent-banner-nest',
 			array( $this, 'render_page' )
 		);
 	}
@@ -52,12 +52,12 @@ class Consent_Pilot_Admin {
 	 */
 	public function register_settings() {
 		register_setting(
-			'consent_pilot_group',
-			CONSENT_PILOT_OPTION,
+			'consent_banner_nest_group',
+			CONSENT_BANNER_NEST_OPTION,
 			array(
 				'type'              => 'array',
-				'sanitize_callback' => array( 'Consent_Pilot_Settings', 'sanitize' ),
-				'default'           => Consent_Pilot_Settings::get_defaults(),
+				'sanitize_callback' => array( 'Consent_Banner_Nest_Settings', 'sanitize' ),
+				'default'           => Consent_Banner_Nest_Settings::get_defaults(),
 			)
 		);
 	}
@@ -74,17 +74,17 @@ class Consent_Pilot_Admin {
 		}
 
 		wp_enqueue_style(
-			'consent-pilot-admin',
-			CONSENT_PILOT_URL . 'admin/css/admin.css',
+			'consent-banner-nest-admin',
+			CONSENT_BANNER_NEST_URL . 'admin/css/admin.css',
 			array(),
-			CONSENT_PILOT_VERSION
+			CONSENT_BANNER_NEST_VERSION
 		);
 
 		wp_enqueue_script(
-			'consent-pilot-admin',
-			CONSENT_PILOT_URL . 'admin/js/admin.js',
+			'consent-banner-nest-admin',
+			CONSENT_BANNER_NEST_URL . 'admin/js/admin.js',
 			array( 'wp-color-picker' ),
-			CONSENT_PILOT_VERSION,
+			CONSENT_BANNER_NEST_VERSION,
 			true
 		);
 		wp_enqueue_style( 'wp-color-picker' );
@@ -97,8 +97,8 @@ class Consent_Pilot_Admin {
 	 * @return array
 	 */
 	public function action_links( $links ) {
-		$url  = admin_url( 'options-general.php?page=consent-pilot' );
-		$link = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-pilot' ) . '</a>';
+		$url  = admin_url( 'options-general.php?page=consent-banner-nest' );
+		$link = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-banner-nest' ) . '</a>';
 		array_unshift( $links, $link );
 		return $links;
 	}
@@ -111,12 +111,12 @@ class Consent_Pilot_Admin {
 	 * @return array
 	 */
 	public function row_meta( $links, $file ) {
-		if ( CONSENT_PILOT_BASENAME !== $file ) {
+		if ( CONSENT_BANNER_NEST_BASENAME !== $file ) {
 			return $links;
 		}
 
-		$links[] = '<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Support on Ko-fi', 'consent-pilot' ) . '</a>';
-		$links[] = '<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'consent-pilot' ) . '</a>';
+		$links[] = '<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Support on Ko-fi', 'consent-banner-nest' ) . '</a>';
+		$links[] = '<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'consent-banner-nest' ) . '</a>';
 
 		return $links;
 	}
@@ -131,9 +131,9 @@ class Consent_Pilot_Admin {
 			return;
 		}
 
-		$settings   = Consent_Pilot::get_settings();
-		$categories = Consent_Pilot_Settings::get_categories();
+		$settings   = Consent_Banner_Nest::get_settings();
+		$categories = Consent_Banner_Nest_Settings::get_categories();
 
-		require CONSENT_PILOT_PATH . 'admin/views/settings-page.php';
+		require CONSENT_BANNER_NEST_PATH . 'admin/views/settings-page.php';
 	}
 }

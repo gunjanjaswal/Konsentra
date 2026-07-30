@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ Consent Pilot
+# 🛡️ Consent Banner Nest
 
 ### A privacy-first GDPR cookie consent banner for WordPress
 
@@ -16,9 +16,9 @@ Give visitors a real choice about cookies, and keep tracking scripts on hold unt
 
 ---
 
-## ✨ Why Consent Pilot
+## ✨ Why Consent Banner Nest
 
-Most consent plugins are bloated, hook into a paid service, or quietly load a tracker before anyone clicks a thing. Consent Pilot does none of that. It's small, it runs entirely on your own site, and it actually blocks scripts until the visitor opts in, which is the part that matters for GDPR.
+Most consent plugins are bloated, hook into a paid service, or quietly load a tracker before anyone clicks a thing. Consent Banner Nest does none of that. It's small, it runs entirely on your own site, and it actually blocks scripts until the visitor opts in, which is the part that matters for GDPR.
 
 No external calls. No account. No upsell wall in front of the basics.
 
@@ -41,20 +41,20 @@ No external calls. No account. No upsell wall in front of the basics.
 
 1. Go to **Plugins → Add New** and upload the plugin zip.
 2. Activate it.
-3. Head to **Settings → Consent Pilot** to make it yours.
+3. Head to **Settings → Consent Banner Nest** to make it yours.
 
 **Manually**
 
 ```bash
 cd wp-content/plugins
-git clone https://github.com/gunjanjaswal/Consent-Pilot-For-Website.git consent-pilot
+git clone https://github.com/gunjanjaswal/Consent-Banner-Nest.git consent-banner-nest
 ```
 
-Then activate **Consent Pilot** from the Plugins screen.
+Then activate **Consent Banner Nest** from the Plugins screen.
 
 ## ⚙️ How script blocking works
 
-Any script you want gated behind consent gets a `text/plain` type and a category tag. That stops the browser from running it. Once the visitor grants that category, Consent Pilot swaps in a real script tag and lets it fire.
+Any script you want gated behind consent gets a `text/plain` type and a category tag. That stops the browser from running it. Once the visitor grants that category, Consent Banner Nest swaps in a real script tag and lets it fire.
 
 ```html
 <!-- Held back until "analytics" is granted -->
@@ -73,21 +73,21 @@ Categories you can use: `functional`, `analytics`, `marketing`. Strictly necessa
 Drop this anywhere (a footer widget or your privacy page is a good spot) to give people a way back to their preferences:
 
 ```
-[consent_pilot_settings]
+[consent_banner_nest_settings]
 ```
 
 Add a custom label if you like:
 
 ```
-[consent_pilot_settings label="Cookie settings"]
+[consent_banner_nest_settings label="Cookie settings"]
 ```
 
 ## 🧑‍💻 Developer hook
 
-Consent Pilot fires a DOM event every time consent changes, so your own scripts can react to it:
+Consent Banner Nest fires a DOM event every time consent changes, so your own scripts can react to it:
 
 ```js
-document.addEventListener( 'consentPilot:updated', function ( event ) {
+document.addEventListener( 'consentBannerNest:updated', function ( event ) {
     // event.detail is a map of category -> true/false
     if ( event.detail.analytics ) {
         // start your analytics
@@ -98,29 +98,29 @@ document.addEventListener( 'consentPilot:updated', function ( event ) {
 ## 📂 Project structure
 
 ```
-consent-pilot/
-├── consent-pilot.php              # Main plugin file
+consent-banner-nest/
+├── consent-banner-nest.php              # Main plugin file
 ├── uninstall.php                  # Clean removal
 ├── readme.txt                     # WordPress.org readme
 ├── includes/
-│   ├── class-consent-pilot.php            # Bootstrap
-│   ├── class-consent-pilot-settings.php   # Defaults & sanitization
-│   └── class-consent-pilot-frontend.php   # Banner, assets, logging
+│   ├── class-consent-banner-nest.php            # Bootstrap
+│   ├── class-consent-banner-nest-settings.php   # Defaults & sanitization
+│   └── class-consent-banner-nest-frontend.php   # Banner, assets, logging
 ├── admin/
-│   ├── class-consent-pilot-admin.php
+│   ├── class-consent-banner-nest-admin.php
 │   ├── views/settings-page.php
 │   ├── css/admin.css
 │   └── js/admin.js
 ├── public/
-│   ├── css/consent-pilot.css
-│   └── js/consent-pilot.js
+│   ├── css/consent-banner-nest.css
+│   └── js/consent-banner-nest.js
 └── languages/
-    └── consent-pilot.pot
+    └── consent-banner-nest.pot
 ```
 
 ## 🔐 A note on compliance
 
-Consent Pilot handles the consent side of things: the banner, the categories, and holding scripts back until someone agrees. Real compliance also depends on your privacy policy, how you handle data, and which services you use. Think of this as one solid piece of the puzzle, not the whole thing.
+Consent Banner Nest handles the consent side of things: the banner, the categories, and holding scripts back until someone agrees. Real compliance also depends on your privacy policy, how you handle data, and which services you use. Think of this as one solid piece of the puzzle, not the whole thing.
 
 ## 🗺️ Roadmap
 
@@ -139,9 +139,9 @@ Consent Pilot handles the consent side of things: the banner, the categories, an
 - Four cookie categories: necessary, functional, analytics, marketing
 - Automatic blocking of tagged scripts until consent is granted
 - Colour picker, custom text, and button labels in the admin
-- `[consent_pilot_settings]` shortcode to reopen preferences
+- `[consent_banner_nest_settings]` shortcode to reopen preferences
 - Optional anonymised consent logging (hashed IP only)
-- `consentPilot:updated` JavaScript event for developers
+- `consentBannerNest:updated` JavaScript event for developers
 - Translation ready with a bundled `.pot` file
 - Clean uninstall on single site and multisite
 
@@ -165,6 +165,6 @@ Released under the **GPLv2 or later** license. Do what you like with it, just ke
 
 <div align="center">
 
-If Consent Pilot saved you some time, a ⭐ on the repo means a lot.
+If Consent Banner Nest saved you some time, a ⭐ on the repo means a lot.
 
 </div>

@@ -2,15 +2,15 @@
 /**
  * Settings model: defaults, sanitization and the option schema.
  *
- * @package ConsentPilot
+ * @package ConsentBannerNest
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Consent_Pilot_Settings
+ * Class Consent_Banner_Nest_Settings
  */
-class Consent_Pilot_Settings {
+class Consent_Banner_Nest_Settings {
 
 	/**
 	 * Default settings used on activation and as a fallback.
@@ -28,13 +28,13 @@ class Consent_Pilot_Settings {
 			'show_settings'      => 1,
 
 			// Content.
-			'heading'            => __( 'We value your privacy', 'consent-pilot' ),
-			'message'            => __( 'We use cookies to improve your experience, analyse traffic and personalise content. You can accept all cookies or manage your preferences.', 'consent-pilot' ),
-			'accept_label'       => __( 'Accept all', 'consent-pilot' ),
-			'reject_label'       => __( 'Reject all', 'consent-pilot' ),
-			'settings_label'     => __( 'Manage preferences', 'consent-pilot' ),
-			'save_label'         => __( 'Save preferences', 'consent-pilot' ),
-			'privacy_label'      => __( 'Privacy Policy', 'consent-pilot' ),
+			'heading'            => __( 'We value your privacy', 'consent-banner-nest' ),
+			'message'            => __( 'We use cookies to improve your experience, analyse traffic and personalise content. You can accept all cookies or manage your preferences.', 'consent-banner-nest' ),
+			'accept_label'       => __( 'Accept all', 'consent-banner-nest' ),
+			'reject_label'       => __( 'Reject all', 'consent-banner-nest' ),
+			'settings_label'     => __( 'Manage preferences', 'consent-banner-nest' ),
+			'save_label'         => __( 'Save preferences', 'consent-banner-nest' ),
+			'privacy_label'      => __( 'Privacy Policy', 'consent-banner-nest' ),
 			'privacy_page'       => 0,
 
 			// Appearance.
@@ -64,23 +64,23 @@ class Consent_Pilot_Settings {
 	public static function get_categories() {
 		return array(
 			'necessary'  => array(
-				'label'       => __( 'Strictly necessary', 'consent-pilot' ),
-				'description' => __( 'Required for the site to function. These cannot be switched off.', 'consent-pilot' ),
+				'label'       => __( 'Strictly necessary', 'consent-banner-nest' ),
+				'description' => __( 'Required for the site to function. These cannot be switched off.', 'consent-banner-nest' ),
 				'locked'      => true,
 			),
 			'functional' => array(
-				'label'       => __( 'Functional', 'consent-pilot' ),
-				'description' => __( 'Remember your choices such as language or region for a better experience.', 'consent-pilot' ),
+				'label'       => __( 'Functional', 'consent-banner-nest' ),
+				'description' => __( 'Remember your choices such as language or region for a better experience.', 'consent-banner-nest' ),
 				'locked'      => false,
 			),
 			'analytics'  => array(
-				'label'       => __( 'Analytics', 'consent-pilot' ),
-				'description' => __( 'Help us understand how visitors interact with the site.', 'consent-pilot' ),
+				'label'       => __( 'Analytics', 'consent-banner-nest' ),
+				'description' => __( 'Help us understand how visitors interact with the site.', 'consent-banner-nest' ),
 				'locked'      => false,
 			),
 			'marketing'  => array(
-				'label'       => __( 'Marketing', 'consent-pilot' ),
-				'description' => __( 'Used to deliver relevant ads and measure their performance.', 'consent-pilot' ),
+				'label'       => __( 'Marketing', 'consent-banner-nest' ),
+				'description' => __( 'Used to deliver relevant ads and measure their performance.', 'consent-banner-nest' ),
 				'locked'      => false,
 			),
 		);

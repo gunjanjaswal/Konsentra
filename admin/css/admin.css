@@ -1,30 +1,30 @@
 /**
- * Consent Pilot — admin settings screen styles.
+ * Consent Banner Nest — admin settings screen styles.
  */
 
-.consent-pilot-admin .cp-tagline {
+.consent-banner-nest-admin .cp-tagline {
 	font-size: 14px;
 	color: #50575e;
 	margin: 4px 0 20px;
 }
 
-.consent-pilot-admin .cp-admin-grid {
+.consent-banner-nest-admin .cp-admin-grid {
 	display: flex;
 	gap: 20px;
 	align-items: flex-start;
 	flex-wrap: wrap;
 }
 
-.consent-pilot-admin .cp-admin-main {
+.consent-banner-nest-admin .cp-admin-main {
 	flex: 1 1 640px;
 	min-width: 0;
 }
 
-.consent-pilot-admin .cp-admin-side {
+.consent-banner-nest-admin .cp-admin-side {
 	flex: 0 0 280px;
 }
 
-.consent-pilot-admin .cp-card {
+.consent-banner-nest-admin .cp-card {
 	background: #fff;
 	border: 1px solid #dcdcde;
 	border-radius: 8px;
@@ -33,7 +33,7 @@
 	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.04 );
 }
 
-.consent-pilot-admin .cp-card h2 {
+.consent-banner-nest-admin .cp-card h2 {
 	font-size: 15px;
 	padding-bottom: 10px;
 	border-bottom: 2px solid #2f80ed;
@@ -41,24 +41,24 @@
 	margin: 12px 0 6px;
 }
 
-.consent-pilot-admin .cp-block {
+.consent-banner-nest-admin .cp-block {
 	display: block;
 	margin-bottom: 6px;
 }
 
-.consent-pilot-admin .cp-label-inline {
+.consent-banner-nest-admin .cp-label-inline {
 	display: inline-block;
 	width: 110px;
 	font-weight: 600;
 }
 
-.consent-pilot-admin .cp-block-label {
+.consent-banner-nest-admin .cp-block-label {
 	display: block;
 	font-weight: 600;
 	margin-bottom: 4px;
 }
 
-.consent-pilot-admin .cp-code {
+.consent-banner-nest-admin .cp-code {
 	display: block;
 	background: #f6f7f7;
 	border: 1px solid #dcdcde;
@@ -69,34 +69,34 @@
 	word-break: break-all;
 }
 
-.consent-pilot-admin .cp-help p {
+.consent-banner-nest-admin .cp-help p {
 	color: #50575e;
 }
 
-.consent-pilot-admin .cp-support-by {
+.consent-banner-nest-admin .cp-support-by {
 	margin-top: 0;
 }
 
-.consent-pilot-admin .cp-links {
+.consent-banner-nest-admin .cp-links {
 	margin: 10px 0 4px;
 	padding: 0;
 	list-style: none;
 }
 
-.consent-pilot-admin .cp-links li {
+.consent-banner-nest-admin .cp-links li {
 	margin: 0 0 8px;
 }
 
-.consent-pilot-admin .cp-links a {
+.consent-banner-nest-admin .cp-links a {
 	text-decoration: none;
 	font-weight: 500;
 }
 
-.consent-pilot-admin .cp-links a:hover {
+.consent-banner-nest-admin .cp-links a:hover {
 	text-decoration: underline;
 }
 
-.consent-pilot-admin .cp-footer-credit {
+.consent-banner-nest-admin .cp-footer-credit {
 	margin-top: 24px;
 	padding-top: 14px;
 	border-top: 1px solid #dcdcde;
@@ -104,6 +104,6 @@
 	font-size: 13px;
 }
 
-.consent-pilot-admin .cp-footer-credit a {
+.consent-banner-nest-admin .cp-footer-credit a {
 	text-decoration: none;
 }

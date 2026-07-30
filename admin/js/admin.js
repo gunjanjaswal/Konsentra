@@ -1,5 +1,5 @@
 /**
- * Consent Pilot — admin settings enhancements.
+ * Consent Banner Nest — admin settings enhancements.
  * Turns the color inputs into WordPress color pickers.
  */
 ( function ( $ ) {

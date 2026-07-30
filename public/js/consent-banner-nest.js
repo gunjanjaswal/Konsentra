@@ -1,5 +1,5 @@
 /**
- * Consent Pilot — front-end consent logic.
+ * Consent Banner Nest — front-end consent logic.
  *
  * Reads and writes the consent cookie, toggles the banner and preferences
  * panel, and unblocks scripts tagged with a data-cp-category attribute once
@@ -8,8 +8,8 @@
 ( function () {
 	'use strict';
 
-	var cfg = window.consentPilot || {};
-	var banner = document.getElementById( 'consent-pilot' );
+	var cfg = window.consentBannerNest || {};
+	var banner = document.getElementById( 'consent-banner-nest' );
 
 	if ( ! banner ) {
 		return;
@@ -76,7 +76,7 @@
 		hideBanner();
 		logConsent( consent );
 		document.dispatchEvent(
-			new CustomEvent( 'consentPilot:updated', { detail: consent } )
+			new CustomEvent( 'consentBannerNest:updated', { detail: consent } )
 		);
 	}
 
@@ -129,7 +129,7 @@
 		} );
 
 		var body = new URLSearchParams();
-		body.append( 'action', 'consent_pilot_log' );
+		body.append( 'action', 'consent_banner_nest_log' );
 		body.append( 'nonce', cfg.nonce );
 		body.append( 'categories', granted.join( ',' ) );
 

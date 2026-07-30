@@ -1,9 +1,9 @@
 /**
- * Consent Pilot — front-end banner styles.
+ * Consent Banner Nest — front-end banner styles.
  * Colors are driven by CSS custom properties set inline from the admin.
  */
 
-.consent-pilot {
+.consent-banner-nest {
 	--cp-bg: #1f2933;
 	--cp-text: #ffffff;
 	--cp-accent: #2f80ed;
@@ -26,14 +26,14 @@
 	animation: cp-rise 0.32s cubic-bezier( 0.16, 1, 0.3, 1 ) both;
 }
 
-.consent-pilot *,
-.consent-pilot *::before,
-.consent-pilot *::after {
+.consent-banner-nest *,
+.consent-banner-nest *::before,
+.consent-banner-nest *::after {
 	box-sizing: border-box;
 }
 
 /* Keep the hidden attribute authoritative over the display rules below. */
-.consent-pilot [hidden] {
+.consent-banner-nest [hidden] {
 	display: none !important;
 }
 
@@ -43,11 +43,11 @@
 }
 
 /* Positioning */
-.consent-pilot.cp-pos-bottom {
+.consent-banner-nest.cp-pos-bottom {
 	bottom: 0;
 }
 
-.consent-pilot.cp-pos-top {
+.consent-banner-nest.cp-pos-top {
 	top: 0;
 	bottom: auto;
 	border-top: 0;
@@ -55,8 +55,8 @@
 	box-shadow: 0 8px 40px rgba( 0, 0, 0, 0.28 );
 }
 
-.consent-pilot.cp-pos-bottom-left,
-.consent-pilot.cp-pos-bottom-right {
+.consent-banner-nest.cp-pos-bottom-left,
+.consent-banner-nest.cp-pos-bottom-right {
 	left: auto;
 	right: auto;
 	max-width: 380px;
@@ -66,12 +66,12 @@
 	box-shadow: 0 20px 60px rgba( 0, 0, 0, 0.35 );
 }
 
-.consent-pilot.cp-pos-bottom-left {
+.consent-banner-nest.cp-pos-bottom-left {
 	bottom: 0;
 	left: 0;
 }
 
-.consent-pilot.cp-pos-bottom-right {
+.consent-banner-nest.cp-pos-bottom-right {
 	bottom: 0;
 	right: 0;
 }
@@ -87,9 +87,9 @@
 	flex-wrap: wrap;
 }
 
-.consent-pilot.cp-layout-box .cp-inner,
-.consent-pilot.cp-pos-bottom-left .cp-inner,
-.consent-pilot.cp-pos-bottom-right .cp-inner {
+.consent-banner-nest.cp-layout-box .cp-inner,
+.consent-banner-nest.cp-pos-bottom-left .cp-inner,
+.consent-banner-nest.cp-pos-bottom-right .cp-inner {
 	flex-direction: column;
 	align-items: stretch;
 	gap: 16px;
@@ -141,9 +141,9 @@
 	flex: 0 0 auto;
 }
 
-.consent-pilot.cp-layout-box .cp-actions,
-.consent-pilot.cp-pos-bottom-left .cp-actions,
-.consent-pilot.cp-pos-bottom-right .cp-actions {
+.consent-banner-nest.cp-layout-box .cp-actions,
+.consent-banner-nest.cp-pos-bottom-left .cp-actions,
+.consent-banner-nest.cp-pos-bottom-right .cp-actions {
 	justify-content: flex-end;
 }
 
@@ -335,8 +335,8 @@
 		max-height: 44vh;
 	}
 
-	.consent-pilot.cp-pos-bottom-left,
-	.consent-pilot.cp-pos-bottom-right {
+	.consent-banner-nest.cp-pos-bottom-left,
+	.consent-banner-nest.cp-pos-bottom-right {
 		max-width: none;
 		margin: 0;
 		border-radius: 0;
@@ -347,7 +347,7 @@
 
 /* Respect reduced motion */
 @media ( prefers-reduced-motion: reduce ) {
-	.consent-pilot {
+	.consent-banner-nest {
 		animation: none;
 	}
 	.cp-btn,
