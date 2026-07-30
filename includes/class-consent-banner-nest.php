@@ -51,17 +51,7 @@ final class Consent_Banner_Nest {
 	 * Constructor. Hooks are registered here.
 	 */
 	private function __construct() {
-		add_action( 'init', array( $this, 'load_textdomain' ) );
 		add_action( 'plugins_loaded', array( $this, 'init_components' ) );
-	}
-
-	/**
-	 * Load the plugin translations.
-	 *
-	 * @return void
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'consent-banner-nest', false, dirname( CONSENT_BANNER_NEST_BASENAME ) . '/languages' );
 	}
 
 	/**

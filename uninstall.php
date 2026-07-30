@@ -16,9 +16,9 @@ delete_option( 'consent_banner_nest_log' );
 
 // Clean up on multisite installs as well.
 if ( is_multisite() ) {
-	$site_ids = get_sites( array( 'fields' => 'ids' ) );
-	foreach ( $site_ids as $site_id ) {
-		switch_to_blog( $site_id );
+	$consent_banner_nest_site_ids = get_sites( array( 'fields' => 'ids' ) );
+	foreach ( $consent_banner_nest_site_ids as $consent_banner_nest_site_id ) {
+		switch_to_blog( $consent_banner_nest_site_id );
 		delete_option( 'consent_banner_nest_settings' );
 		delete_option( 'consent_banner_nest_log' );
 		restore_current_blog();
