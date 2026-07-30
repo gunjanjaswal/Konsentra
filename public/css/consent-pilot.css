@@ -1,0 +1,358 @@
+/**
+ * Consent Pilot — front-end banner styles.
+ * Colors are driven by CSS custom properties set inline from the admin.
+ */
+
+.consent-pilot {
+	--cp-bg: #1f2933;
+	--cp-text: #ffffff;
+	--cp-accent: #2f80ed;
+	--cp-btn-text: #ffffff;
+
+	position: fixed;
+	z-index: 999999;
+	left: 0;
+	right: 0;
+	box-sizing: border-box;
+	color: var(--cp-text);
+	background: color-mix( in srgb, var(--cp-bg) 92%, transparent );
+	backdrop-filter: saturate( 140% ) blur( 12px );
+	-webkit-backdrop-filter: saturate( 140% ) blur( 12px );
+	border-top: 1px solid rgba( 255, 255, 255, 0.08 );
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	box-shadow: 0 -8px 40px rgba( 0, 0, 0, 0.28 );
+	animation: cp-rise 0.32s cubic-bezier( 0.16, 1, 0.3, 1 ) both;
+}
+
+.consent-pilot *,
+.consent-pilot *::before,
+.consent-pilot *::after {
+	box-sizing: border-box;
+}
+
+/* Keep the hidden attribute authoritative over the display rules below. */
+.consent-pilot [hidden] {
+	display: none !important;
+}
+
+@keyframes cp-rise {
+	from { opacity: 0; transform: translateY( 14px ); }
+	to   { opacity: 1; transform: translateY( 0 ); }
+}
+
+/* Positioning */
+.consent-pilot.cp-pos-bottom {
+	bottom: 0;
+}
+
+.consent-pilot.cp-pos-top {
+	top: 0;
+	bottom: auto;
+	border-top: 0;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
+	box-shadow: 0 8px 40px rgba( 0, 0, 0, 0.28 );
+}
+
+.consent-pilot.cp-pos-bottom-left,
+.consent-pilot.cp-pos-bottom-right {
+	left: auto;
+	right: auto;
+	max-width: 380px;
+	border: 1px solid rgba( 255, 255, 255, 0.1 );
+	border-radius: 16px;
+	margin: 22px;
+	box-shadow: 0 20px 60px rgba( 0, 0, 0, 0.35 );
+}
+
+.consent-pilot.cp-pos-bottom-left {
+	bottom: 0;
+	left: 0;
+}
+
+.consent-pilot.cp-pos-bottom-right {
+	bottom: 0;
+	right: 0;
+}
+
+/* Inner layout */
+.cp-inner {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 16px 22px;
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	flex-wrap: wrap;
+}
+
+.consent-pilot.cp-layout-box .cp-inner,
+.consent-pilot.cp-pos-bottom-left .cp-inner,
+.consent-pilot.cp-pos-bottom-right .cp-inner {
+	flex-direction: column;
+	align-items: stretch;
+	gap: 16px;
+	padding: 20px;
+}
+
+.cp-content {
+	flex: 1 1 440px;
+	min-width: 0;
+}
+
+.cp-heading {
+	margin: 0 0 4px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--cp-text);
+}
+
+.cp-message {
+	margin: 0;
+	font-size: 13px;
+	opacity: 0.72;
+	max-width: 640px;
+}
+
+.cp-message p {
+	margin: 0 0 6px;
+}
+
+.cp-message p:last-child {
+	margin-bottom: 0;
+}
+
+.cp-privacy-link,
+.cp-message a {
+	color: var(--cp-text);
+	opacity: 0.9;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+/* Actions */
+.cp-actions {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	align-items: center;
+	flex: 0 0 auto;
+}
+
+.consent-pilot.cp-layout-box .cp-actions,
+.consent-pilot.cp-pos-bottom-left .cp-actions,
+.consent-pilot.cp-pos-bottom-right .cp-actions {
+	justify-content: flex-end;
+}
+
+.cp-btn {
+	appearance: none;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	padding: 9px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.06s ease, box-shadow 0.18s ease;
+	font-family: inherit;
+}
+
+.cp-btn:active {
+	transform: translateY( 1px );
+}
+
+.cp-btn:focus-visible {
+	outline: 2px solid var(--cp-accent);
+	outline-offset: 2px;
+}
+
+.cp-btn-accept,
+.cp-btn-save {
+	background: var(--cp-accent);
+	color: var(--cp-btn-text);
+	box-shadow: 0 6px 18px color-mix( in srgb, var(--cp-accent) 35%, transparent );
+}
+
+.cp-btn-accept:hover,
+.cp-btn-save:hover {
+	background: color-mix( in srgb, var(--cp-accent) 88%, #fff );
+	box-shadow: 0 8px 22px color-mix( in srgb, var(--cp-accent) 45%, transparent );
+}
+
+.cp-btn-ghost {
+	background: rgba( 255, 255, 255, 0.04 );
+	color: var(--cp-text);
+	border-color: rgba( 255, 255, 255, 0.16 );
+}
+
+.cp-btn-ghost:hover {
+	background: rgba( 255, 255, 255, 0.1 );
+	border-color: rgba( 255, 255, 255, 0.28 );
+}
+
+/* Preferences panel */
+.cp-prefs {
+	margin-top: 12px;
+	display: grid;
+	grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	gap: 8px;
+	max-width: 760px;
+	max-height: 38vh;
+	overflow-y: auto;
+	padding-right: 2px;
+}
+
+.cp-pref {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 9px 12px;
+	background: rgba( 255, 255, 255, 0.04 );
+	border: 1px solid rgba( 255, 255, 255, 0.08 );
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.16s ease, border-color 0.16s ease;
+}
+
+.cp-pref:hover {
+	background: rgba( 255, 255, 255, 0.07 );
+	border-color: rgba( 255, 255, 255, 0.14 );
+}
+
+.cp-pref.is-locked {
+	cursor: default;
+	opacity: 0.85;
+}
+
+.cp-pref-body {
+	display: block;
+	min-width: 0;
+}
+
+.cp-pref-label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.cp-pref-desc {
+	display: block;
+	font-size: 11.5px;
+	line-height: 1.35;
+	opacity: 0.6;
+	margin-top: 1px;
+}
+
+/* Toggle switch */
+.cp-switch {
+	position: relative;
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+}
+
+.cp-switch .cp-pref-input {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	cursor: pointer;
+}
+
+.cp-switch-track {
+	position: relative;
+	display: block;
+	width: 40px;
+	height: 23px;
+	border-radius: 999px;
+	background: rgba( 255, 255, 255, 0.18 );
+	transition: background-color 0.2s ease;
+	pointer-events: none;
+}
+
+.cp-switch-thumb {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 19px;
+	height: 19px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.35 );
+	transition: transform 0.2s cubic-bezier( 0.16, 1, 0.3, 1 );
+}
+
+.cp-pref-input:checked ~ .cp-switch-track {
+	background: var(--cp-accent);
+}
+
+.cp-pref-input:checked ~ .cp-switch-track .cp-switch-thumb {
+	transform: translateX( 17px );
+}
+
+.cp-pref-input:focus-visible ~ .cp-switch-track {
+	outline: 2px solid var(--cp-accent);
+	outline-offset: 2px;
+}
+
+.cp-pref-input:disabled ~ .cp-switch-track {
+	background: color-mix( in srgb, var(--cp-accent) 55%, transparent );
+	opacity: 0.7;
+}
+
+.cp-pref-input:disabled {
+	cursor: default;
+}
+
+/* Small screens */
+@media ( max-width: 782px ) {
+	.cp-inner {
+		flex-direction: column;
+		align-items: stretch;
+		padding: 16px;
+		gap: 14px;
+	}
+
+	.cp-actions {
+		justify-content: stretch;
+	}
+
+	.cp-btn {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+
+	.cp-prefs {
+		grid-template-columns: 1fr;
+		max-width: none;
+		max-height: 44vh;
+	}
+
+	.consent-pilot.cp-pos-bottom-left,
+	.consent-pilot.cp-pos-bottom-right {
+		max-width: none;
+		margin: 0;
+		border-radius: 0;
+		border-left: 0;
+		border-right: 0;
+	}
+}
+
+/* Respect reduced motion */
+@media ( prefers-reduced-motion: reduce ) {
+	.consent-pilot {
+		animation: none;
+	}
+	.cp-btn,
+	.cp-switch-thumb,
+	.cp-switch-track {
+		transition: none;
+	}
+}

@@ -1,0 +1,109 @@
+/**
+ * Consent Pilot — admin settings screen styles.
+ */
+
+.consent-pilot-admin .cp-tagline {
+	font-size: 14px;
+	color: #50575e;
+	margin: 4px 0 20px;
+}
+
+.consent-pilot-admin .cp-admin-grid {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.consent-pilot-admin .cp-admin-main {
+	flex: 1 1 640px;
+	min-width: 0;
+}
+
+.consent-pilot-admin .cp-admin-side {
+	flex: 0 0 280px;
+}
+
+.consent-pilot-admin .cp-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 8px 20px 16px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.04 );
+}
+
+.consent-pilot-admin .cp-card h2 {
+	font-size: 15px;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #2f80ed;
+	display: inline-block;
+	margin: 12px 0 6px;
+}
+
+.consent-pilot-admin .cp-block {
+	display: block;
+	margin-bottom: 6px;
+}
+
+.consent-pilot-admin .cp-label-inline {
+	display: inline-block;
+	width: 110px;
+	font-weight: 600;
+}
+
+.consent-pilot-admin .cp-block-label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+
+.consent-pilot-admin .cp-code {
+	display: block;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	padding: 8px 10px;
+	margin-top: 8px;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.consent-pilot-admin .cp-help p {
+	color: #50575e;
+}
+
+.consent-pilot-admin .cp-support-by {
+	margin-top: 0;
+}
+
+.consent-pilot-admin .cp-links {
+	margin: 10px 0 4px;
+	padding: 0;
+	list-style: none;
+}
+
+.consent-pilot-admin .cp-links li {
+	margin: 0 0 8px;
+}
+
+.consent-pilot-admin .cp-links a {
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.consent-pilot-admin .cp-links a:hover {
+	text-decoration: underline;
+}
+
+.consent-pilot-admin .cp-footer-credit {
+	margin-top: 24px;
+	padding-top: 14px;
+	border-top: 1px solid #dcdcde;
+	color: #646970;
+	font-size: 13px;
+}
+
+.consent-pilot-admin .cp-footer-credit a {
+	text-decoration: none;
+}
