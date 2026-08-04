@@ -2,15 +2,15 @@
 /**
  * Admin: settings page, registration and asset loading.
  *
- * @package ConsentBannerNest
+ * @package Konsentra
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Consent_Banner_Nest_Admin
+ * Class Konsentra_Admin
  */
-class Consent_Banner_Nest_Admin {
+class Konsentra_Admin {
 
 	/**
 	 * Settings page hook suffix.
@@ -26,7 +26,7 @@ class Consent_Banner_Nest_Admin {
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		add_filter( 'plugin_action_links_' . CONSENT_BANNER_NEST_BASENAME, array( $this, 'action_links' ) );
+		add_filter( 'plugin_action_links_' . KONSENTRA_BASENAME, array( $this, 'action_links' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'row_meta' ), 10, 2 );
 	}
 
@@ -37,10 +37,10 @@ class Consent_Banner_Nest_Admin {
 	 */
 	public function add_menu() {
 		$this->hook = add_options_page(
-			__( 'Consent Banner Nest', 'consent-banner-nest' ),
-			__( 'Consent Banner Nest', 'consent-banner-nest' ),
+			__( 'Konsentra', 'konsentra' ),
+			__( 'Konsentra', 'konsentra' ),
 			'manage_options',
-			'consent-banner-nest',
+			'konsentra',
 			array( $this, 'render_page' )
 		);
 	}
@@ -52,12 +52,12 @@ class Consent_Banner_Nest_Admin {
 	 */
 	public function register_settings() {
 		register_setting(
-			'consent_banner_nest_group',
-			CONSENT_BANNER_NEST_OPTION,
+			'konsentra_group',
+			KONSENTRA_OPTION,
 			array(
 				'type'              => 'array',
-				'sanitize_callback' => array( 'Consent_Banner_Nest_Settings', 'sanitize' ),
-				'default'           => Consent_Banner_Nest_Settings::get_defaults(),
+				'sanitize_callback' => array( 'Konsentra_Settings', 'sanitize' ),
+				'default'           => Konsentra_Settings::get_defaults(),
 			)
 		);
 	}
@@ -74,17 +74,17 @@ class Consent_Banner_Nest_Admin {
 		}
 
 		wp_enqueue_style(
-			'consent-banner-nest-admin',
-			CONSENT_BANNER_NEST_URL . 'admin/css/admin.css',
+			'konsentra-admin',
+			KONSENTRA_URL . 'admin/css/admin.css',
 			array(),
-			CONSENT_BANNER_NEST_VERSION
+			KONSENTRA_VERSION
 		);
 
 		wp_enqueue_script(
-			'consent-banner-nest-admin',
-			CONSENT_BANNER_NEST_URL . 'admin/js/admin.js',
+			'konsentra-admin',
+			KONSENTRA_URL . 'admin/js/admin.js',
 			array( 'wp-color-picker' ),
-			CONSENT_BANNER_NEST_VERSION,
+			KONSENTRA_VERSION,
 			true
 		);
 		wp_enqueue_style( 'wp-color-picker' );
@@ -97,8 +97,8 @@ class Consent_Banner_Nest_Admin {
 	 * @return array
 	 */
 	public function action_links( $links ) {
-		$url  = admin_url( 'options-general.php?page=consent-banner-nest' );
-		$link = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'consent-banner-nest' ) . '</a>';
+		$url  = admin_url( 'options-general.php?page=konsentra' );
+		$link = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'Settings', 'konsentra' ) . '</a>';
 		array_unshift( $links, $link );
 		return $links;
 	}
@@ -111,12 +111,12 @@ class Consent_Banner_Nest_Admin {
 	 * @return array
 	 */
 	public function row_meta( $links, $file ) {
-		if ( CONSENT_BANNER_NEST_BASENAME !== $file ) {
+		if ( KONSENTRA_BASENAME !== $file ) {
 			return $links;
 		}
 
-		$links[] = '<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Support on Ko-fi', 'consent-banner-nest' ) . '</a>';
-		$links[] = '<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'consent-banner-nest' ) . '</a>';
+		$links[] = '<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Support on Ko-fi', 'konsentra' ) . '</a>';
+		$links[] = '<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'konsentra' ) . '</a>';
 
 		return $links;
 	}
@@ -131,9 +131,9 @@ class Consent_Banner_Nest_Admin {
 			return;
 		}
 
-		$settings   = Consent_Banner_Nest::get_settings();
-		$categories = Consent_Banner_Nest_Settings::get_categories();
+		$settings   = Konsentra::get_settings();
+		$categories = Konsentra_Settings::get_categories();
 
-		require CONSENT_BANNER_NEST_PATH . 'admin/views/settings-page.php';
+		require KONSENTRA_PATH . 'admin/views/settings-page.php';
 	}
 }

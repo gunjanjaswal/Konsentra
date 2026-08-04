@@ -2,15 +2,15 @@
 /**
  * Settings model: defaults, sanitization and the option schema.
  *
- * @package ConsentBannerNest
+ * @package Konsentra
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Class Consent_Banner_Nest_Settings
+ * Class Konsentra_Settings
  */
-class Consent_Banner_Nest_Settings {
+class Konsentra_Settings {
 
 	/**
 	 * Default settings used on activation and as a fallback.
@@ -28,13 +28,13 @@ class Consent_Banner_Nest_Settings {
 			'show_settings'      => 1,
 
 			// Content.
-			'heading'            => __( 'We value your privacy', 'consent-banner-nest' ),
-			'message'            => __( 'We use cookies to improve your experience, analyse traffic and personalise content. You can accept all cookies or manage your preferences.', 'consent-banner-nest' ),
-			'accept_label'       => __( 'Accept all', 'consent-banner-nest' ),
-			'reject_label'       => __( 'Reject all', 'consent-banner-nest' ),
-			'settings_label'     => __( 'Manage preferences', 'consent-banner-nest' ),
-			'save_label'         => __( 'Save preferences', 'consent-banner-nest' ),
-			'privacy_label'      => __( 'Privacy Policy', 'consent-banner-nest' ),
+			'heading'            => __( 'We value your privacy', 'konsentra' ),
+			'message'            => __( 'We use cookies to improve your experience, analyse traffic and personalise content. You can accept all cookies or manage your preferences.', 'konsentra' ),
+			'accept_label'       => __( 'Accept all', 'konsentra' ),
+			'reject_label'       => __( 'Reject all', 'konsentra' ),
+			'settings_label'     => __( 'Manage preferences', 'konsentra' ),
+			'save_label'         => __( 'Save preferences', 'konsentra' ),
+			'privacy_label'      => __( 'Privacy Policy', 'konsentra' ),
 			'privacy_page'       => 0,
 
 			// Appearance.
@@ -64,23 +64,23 @@ class Consent_Banner_Nest_Settings {
 	public static function get_categories() {
 		return array(
 			'necessary'  => array(
-				'label'       => __( 'Strictly necessary', 'consent-banner-nest' ),
-				'description' => __( 'Required for the site to function. These cannot be switched off.', 'consent-banner-nest' ),
+				'label'       => __( 'Strictly necessary', 'konsentra' ),
+				'description' => __( 'Required for the site to function. These cannot be switched off.', 'konsentra' ),
 				'locked'      => true,
 			),
 			'functional' => array(
-				'label'       => __( 'Functional', 'consent-banner-nest' ),
-				'description' => __( 'Remember your choices such as language or region for a better experience.', 'consent-banner-nest' ),
+				'label'       => __( 'Functional', 'konsentra' ),
+				'description' => __( 'Remember your choices such as language or region for a better experience.', 'konsentra' ),
 				'locked'      => false,
 			),
 			'analytics'  => array(
-				'label'       => __( 'Analytics', 'consent-banner-nest' ),
-				'description' => __( 'Help us understand how visitors interact with the site.', 'consent-banner-nest' ),
+				'label'       => __( 'Analytics', 'konsentra' ),
+				'description' => __( 'Help us understand how visitors interact with the site.', 'konsentra' ),
 				'locked'      => false,
 			),
 			'marketing'  => array(
-				'label'       => __( 'Marketing', 'consent-banner-nest' ),
-				'description' => __( 'Used to deliver relevant ads and measure their performance.', 'consent-banner-nest' ),
+				'label'       => __( 'Marketing', 'konsentra' ),
+				'description' => __( 'Used to deliver relevant ads and measure their performance.', 'konsentra' ),
 				'locked'      => false,
 			),
 		);

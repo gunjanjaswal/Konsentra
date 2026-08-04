@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Consent Banner Nest are documented here.
+All notable changes to Konsentra are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -15,12 +15,15 @@ First public release.
 - Four cookie categories: strictly necessary, functional, analytics, and marketing.
 - Automatic blocking of tagged scripts until the matching category is granted (`type="text/plain"` + `data-cp-category`).
 - Colour picker, custom text, and button labels in the admin.
-- `[consent_banner_nest_settings]` shortcode to reopen preferences anywhere.
+- `[konsentra_settings]` shortcode to reopen preferences anywhere.
 - Optional anonymised consent logging (hashed IP only, never a raw address).
-- `consentBannerNest:updated` JavaScript event for developers.
+- `konsentra:updated` JavaScript event for developers.
 - Support and author links, including Ko-fi, in the settings sidebar and the plugins list row.
 - Translation ready with a bundled `.pot` file.
 - Clean uninstall on single site and multisite.
+
+### Changed
+- Named the plugin Konsentra: a distinctive brand up front with a descriptive tail, meeting the wordpress.org naming guideline.
 
 ### Fixed
 - Distinct Plugin URI and Author URI in the plugin header.
@@ -28,4 +31,4 @@ First public release.
 - Prefixed template and uninstall variables with the plugin prefix.
 - Dropped the discouraged `load_plugin_textdomain()` call; translations load automatically.
 
-[1.0.0]: https://github.com/gunjanjaswal/Consent-Banner-Nest/releases/tag/v1.0.0
+[1.0.0]: https://github.com/gunjanjaswal/Konsentra/releases/tag/v1.0.0

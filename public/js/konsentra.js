@@ -1,5 +1,5 @@
 /**
- * Consent Banner Nest — front-end consent logic.
+ * Konsentra — front-end consent logic.
  *
  * Reads and writes the consent cookie, toggles the banner and preferences
  * panel, and unblocks scripts tagged with a data-cp-category attribute once
@@ -8,8 +8,8 @@
 ( function () {
 	'use strict';
 
-	var cfg = window.consentBannerNest || {};
-	var banner = document.getElementById( 'consent-banner-nest' );
+	var cfg = window.konsentra || {};
+	var banner = document.getElementById( 'konsentra' );
 
 	if ( ! banner ) {
 		return;
@@ -76,7 +76,7 @@
 		hideBanner();
 		logConsent( consent );
 		document.dispatchEvent(
-			new CustomEvent( 'consentBannerNest:updated', { detail: consent } )
+			new CustomEvent( 'konsentra:updated', { detail: consent } )
 		);
 	}
 
@@ -129,7 +129,7 @@
 		} );
 
 		var body = new URLSearchParams();
-		body.append( 'action', 'consent_banner_nest_log' );
+		body.append( 'action', 'konsentra_log' );
 		body.append( 'nonce', cfg.nonce );
 		body.append( 'categories', granted.join( ',' ) );
 

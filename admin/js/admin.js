@@ -1,5 +1,5 @@
 /**
- * Consent Banner Nest — admin settings enhancements.
+ * Konsentra — admin settings enhancements.
  * Turns the color inputs into WordPress color pickers.
  */
 ( function ( $ ) {

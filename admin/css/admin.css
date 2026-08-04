@@ -1,30 +1,30 @@
 /**
- * Consent Banner Nest — admin settings screen styles.
+ * Konsentra — admin settings screen styles.
  */
 
-.consent-banner-nest-admin .cp-tagline {
+.konsentra-admin .cp-tagline {
 	font-size: 14px;
 	color: #50575e;
 	margin: 4px 0 20px;
 }
 
-.consent-banner-nest-admin .cp-admin-grid {
+.konsentra-admin .cp-admin-grid {
 	display: flex;
 	gap: 20px;
 	align-items: flex-start;
 	flex-wrap: wrap;
 }
 
-.consent-banner-nest-admin .cp-admin-main {
+.konsentra-admin .cp-admin-main {
 	flex: 1 1 640px;
 	min-width: 0;
 }
 
-.consent-banner-nest-admin .cp-admin-side {
+.konsentra-admin .cp-admin-side {
 	flex: 0 0 280px;
 }
 
-.consent-banner-nest-admin .cp-card {
+.konsentra-admin .cp-card {
 	background: #fff;
 	border: 1px solid #dcdcde;
 	border-radius: 8px;
@@ -33,7 +33,7 @@
 	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.04 );
 }
 
-.consent-banner-nest-admin .cp-card h2 {
+.konsentra-admin .cp-card h2 {
 	font-size: 15px;
 	padding-bottom: 10px;
 	border-bottom: 2px solid #2f80ed;
@@ -41,24 +41,24 @@
 	margin: 12px 0 6px;
 }
 
-.consent-banner-nest-admin .cp-block {
+.konsentra-admin .cp-block {
 	display: block;
 	margin-bottom: 6px;
 }
 
-.consent-banner-nest-admin .cp-label-inline {
+.konsentra-admin .cp-label-inline {
 	display: inline-block;
 	width: 110px;
 	font-weight: 600;
 }
 
-.consent-banner-nest-admin .cp-block-label {
+.konsentra-admin .cp-block-label {
 	display: block;
 	font-weight: 600;
 	margin-bottom: 4px;
 }
 
-.consent-banner-nest-admin .cp-code {
+.konsentra-admin .cp-code {
 	display: block;
 	background: #f6f7f7;
 	border: 1px solid #dcdcde;
@@ -69,34 +69,34 @@
 	word-break: break-all;
 }
 
-.consent-banner-nest-admin .cp-help p {
+.konsentra-admin .cp-help p {
 	color: #50575e;
 }
 
-.consent-banner-nest-admin .cp-support-by {
+.konsentra-admin .cp-support-by {
 	margin-top: 0;
 }
 
-.consent-banner-nest-admin .cp-links {
+.konsentra-admin .cp-links {
 	margin: 10px 0 4px;
 	padding: 0;
 	list-style: none;
 }
 
-.consent-banner-nest-admin .cp-links li {
+.konsentra-admin .cp-links li {
 	margin: 0 0 8px;
 }
 
-.consent-banner-nest-admin .cp-links a {
+.konsentra-admin .cp-links a {
 	text-decoration: none;
 	font-weight: 500;
 }
 
-.consent-banner-nest-admin .cp-links a:hover {
+.konsentra-admin .cp-links a:hover {
 	text-decoration: underline;
 }
 
-.consent-banner-nest-admin .cp-footer-credit {
+.konsentra-admin .cp-footer-credit {
 	margin-top: 24px;
 	padding-top: 14px;
 	border-top: 1px solid #dcdcde;
@@ -104,6 +104,6 @@
 	font-size: 13px;
 }
 
-.consent-banner-nest-admin .cp-footer-credit a {
+.konsentra-admin .cp-footer-credit a {
 	text-decoration: none;
 }
