@@ -5,7 +5,7 @@ Tags: gdpr, cookie consent, cookie banner, privacy, consent
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 7.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 
 == Changelog ==
 
+= 1.0.2 =
+* Housekeeping: refreshed the plugin directory assets. No functional changes.
+
 = 1.0.1 =
 * Brightened the banner message text for better readability on the dark background.
 
@@ -87,6 +90,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Asset refresh only; no functional changes.
 
 = 1.0.1 =
 Improves banner text readability.
