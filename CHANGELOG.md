@@ -4,6 +4,11 @@ All notable changes to Konsentra are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-08-06
+
+### Fixed
+- Brightened the banner message text so it reads clearly as white on the dark background.
+
 ## [1.0.0] - 2026-07-31
 
 First public release.
@@ -31,4 +36,5 @@ First public release.
 - Prefixed template and uninstall variables with the plugin prefix.
 - Dropped the discouraged `load_plugin_textdomain()` call; translations load automatically.
 
+[1.0.1]: https://github.com/gunjanjaswal/Konsentra/releases/tag/v1.0.1
 [1.0.0]: https://github.com/gunjanjaswal/Konsentra/releases/tag/v1.0.0

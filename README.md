@@ -9,7 +9,7 @@ Give visitors a real choice about cookies, and keep tracking scripts on hold unt
 ![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-7.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![License](https://img.shields.io/badge/License-GPL%20v2-3DA639?style=for-the-badge&logo=gnu&logoColor=white)
-![Version](https://img.shields.io/badge/Version-1.0.0-2F80ED?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.1-2F80ED?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-none-FF6B6B?style=for-the-badge)
 
 </div>
@@ -131,6 +131,9 @@ Konsentra handles the consent side of things: the banner, the categories, and ho
 - [ ] Import/export of settings
 
 ## 📝 Changelog
+
+### 1.0.1
+- Brightened the banner message text for better readability on the dark background
 
 ### 1.0.0
 - First public release

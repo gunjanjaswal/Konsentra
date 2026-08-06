@@ -112,7 +112,8 @@
 .cp-message {
 	margin: 0;
 	font-size: 13px;
-	opacity: 0.72;
+	opacity: 0.92;
+	color: var(--cp-text);
 	max-width: 640px;
 }
 

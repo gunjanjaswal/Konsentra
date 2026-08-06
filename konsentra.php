@@ -3,7 +3,7 @@
  * Plugin Name:       Konsentra - Cookie Consent Banner
  * Plugin URI:        https://github.com/gunjanjaswal/Konsentra
  * Description:       A lightweight, privacy-first GDPR cookie consent banner with category controls and automatic script blocking until the visitor opts in.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 5.8
  * Requires PHP:      7.2
  * Author:            Gunjan Jaswal
@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Current plugin version.
  */
-define( 'KONSENTRA_VERSION', '1.0.0' );
+define( 'KONSENTRA_VERSION', '1.0.1' );
 
 /**
  * Plugin file, directory path and URL helpers.
