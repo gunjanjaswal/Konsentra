@@ -5,7 +5,7 @@ Tags: gdpr, cookie consent, cookie banner, privacy, consent
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,10 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 
 == Changelog ==
 
+= 1.0.4 =
+* Fixed the "Translation loading was triggered too early" notice in the debug log. The banner was being built on plugins_loaded, and reading its default wording asked WordPress for translations before it was ready to serve them. It now waits for init, which is where WordPress expects this to happen.
+* No change to the banner, your settings or anything on the front end. If you run with WP_DEBUG on, your log just gets a lot quieter.
+
 = 1.0.3 =
 * Housekeeping: refreshed the icon, banner, and screenshots. No functional changes.
 
@@ -93,6 +97,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.4 =
+Clears the "translation loading triggered too early" notice from the debug log. Nothing else changes.
 
 = 1.0.3 =
 Asset refresh only; no functional changes.

@@ -51,7 +51,13 @@ final class Konsentra {
 	 * Constructor. Hooks are registered here.
 	 */
 	private function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'init_components' ) );
+		/*
+		 * Wait for 'init' rather than 'plugins_loaded'. The front-end handler reads
+		 * the settings as it is built, and the defaults it falls back to are
+		 * translated strings, so building it any earlier asks WordPress for
+		 * translations before it is ready to hand them over.
+		 */
+		add_action( 'init', array( $this, 'init_components' ) );
 	}
 
 	/**
