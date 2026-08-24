@@ -5,6 +5,7 @@
  * Description:       A lightweight, privacy-first GDPR cookie consent banner with category controls and automatic script blocking until the visitor opts in.
  * Version:           1.0.3
  * Requires at least: 5.8
+ * Tested up to:      7.1
  * Requires PHP:      7.2
  * Author:            Gunjan Jaswal
  * Author URI:        https://www.gunjanjaswal.me
