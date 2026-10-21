@@ -243,7 +243,7 @@ $konsentra_opt = KONSENTRA_OPTION;
 					<p><?php esc_html_e( 'Enjoying the plugin? A coffee keeps it going.', 'konsentra' ); ?></p>
 					<ul class="cp-links">
 						<li><a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">☕ <?php esc_html_e( 'Buy me a coffee', 'konsentra' ); ?></a></li>
-						<li><a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">🌐 <?php esc_html_e( 'Website', 'konsentra' ); ?></a></li>
+						<li><a href="https://gunjanjaswal.me" target="_blank" rel="noopener noreferrer">🌐 <?php esc_html_e( 'Website', 'konsentra' ); ?></a></li>
 						<li><a href="mailto:hello@gunjanjaswal.me">✉️ hello@gunjanjaswal.me</a></li>
 					</ul>
 				</div>
@@ -258,7 +258,7 @@ $konsentra_opt = KONSENTRA_OPTION;
 		printf(
 			/* translators: 1: author link, 2: Ko-fi link. */
 			esc_html__( 'Konsentra by %1$s. If it helps, you can %2$s.', 'konsentra' ),
-			'<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">Gunjan Jaswal</a>',
+			'<a href="https://gunjanjaswal.me" target="_blank" rel="noopener noreferrer">Gunjan Jaswal</a>',
 			'<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'support the work on Ko-fi', 'konsentra' ) . '</a>'
 		);
 		?>

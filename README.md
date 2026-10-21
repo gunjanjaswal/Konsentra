@@ -160,7 +160,7 @@ Released under the **GPLv2 or later** license. Do what you like with it, just ke
 
 **Gunjan Jaswal**
 
-[![Website](https://img.shields.io/badge/Website-gunjanjaswal.me-2F80ED?style=flat-square&logo=google-chrome&logoColor=white)](https://www.gunjanjaswal.me)
+[![Website](https://img.shields.io/badge/Website-gunjanjaswal.me-2F80ED?style=flat-square&logo=google-chrome&logoColor=white)](https://gunjanjaswal.me)
 [![Email](https://img.shields.io/badge/Email-hello@gunjanjaswal.me-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:hello@gunjanjaswal.me)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/gunjanjaswal)
 

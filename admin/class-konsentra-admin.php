@@ -116,7 +116,7 @@ class Konsentra_Admin {
 		}
 
 		$links[] = '<a href="https://ko-fi.com/gunjanjaswal" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Support on Ko-fi', 'konsentra' ) . '</a>';
-		$links[] = '<a href="https://www.gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'konsentra' ) . '</a>';
+		$links[] = '<a href="https://gunjanjaswal.me" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Author', 'konsentra' ) . '</a>';
 
 		return $links;
 	}

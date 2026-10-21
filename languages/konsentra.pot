@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Konsentra 1.0.0\n"
-"Report-Msgid-Bugs-To: https://www.gunjanjaswal.me\n"
+"Report-Msgid-Bugs-To: https://gunjanjaswal.me\n"
 "Last-Translator: Gunjan Jaswal <hello@gunjanjaswal.me>\n"
 "Language-Team: Gunjan Jaswal <hello@gunjanjaswal.me>\n"
 "MIME-Version: 1.0\n"
