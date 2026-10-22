@@ -51,6 +51,9 @@ class Konsentra_Settings {
 			// Script blocking.
 			'block_scripts'      => 1,
 
+			// Google Consent Mode v2.
+			'consent_mode'       => 0,
+
 			// Privacy.
 			'log_consent'        => 0,
 		);
@@ -111,6 +114,7 @@ class Konsentra_Settings {
 			'cat_analytics',
 			'cat_marketing',
 			'block_scripts',
+			'consent_mode',
 			'log_consent',
 		);
 		foreach ( $booleans as $key ) {

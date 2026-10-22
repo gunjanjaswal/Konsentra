@@ -5,7 +5,7 @@ Tags: gdpr, cookie consent, cookie banner, privacy, consent
 Requires at least: 5.8
 Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 1.0.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 
 == Changelog ==
 
+= 1.1.0 =
+* New: Google Consent Mode v2 support. Turn it on under Script blocking and Konsentra sets the consent default to denied before your Google tags load, then updates it to match what the visitor chooses. The Analytics category maps to analytics_storage and the Marketing category to the ad_storage, ad_user_data and ad_personalization signals, so Google Analytics and Ads respect consent out of the box.
+
 = 1.0.4 =
 * Fixed the "Translation loading was triggered too early" notice in the debug log. The banner was being built on plugins_loaded, and reading its default wording asked WordPress for translations before it was ready to serve them. It now waits for init, which is where WordPress expects this to happen.
 * No change to the banner, your settings or anything on the front end. If you run with WP_DEBUG on, your log just gets a lot quieter.
@@ -97,6 +100,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Adds Google Consent Mode v2 support so Google Analytics and Ads respect the visitor's cookie choices.
 
 = 1.0.4 =
 Clears the "translation loading triggered too early" notice from the debug log. Nothing else changes.

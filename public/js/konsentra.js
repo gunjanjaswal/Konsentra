@@ -73,6 +73,7 @@
 		consent.necessary = true;
 		writeCookie( cfg.cookieName, JSON.stringify( consent ), cfg.expiryDays );
 		applyConsent( consent );
+		pushConsentMode( consent );
 		hideBanner();
 		logConsent( consent );
 		document.dispatchEvent(
@@ -111,6 +112,32 @@
 				script.textContent = node.textContent;
 			}
 			node.parentNode.replaceChild( script, node );
+		} );
+	}
+
+	/**
+	 * Tell Google Consent Mode v2 about the visitor's choice, if enabled and a
+	 * gtag function is present on the page.
+	 *
+	 * @param {Object} consent Category => bool map.
+	 */
+	function pushConsentMode( consent ) {
+		if ( ! cfg.consentMode || typeof window.gtag !== 'function' ) {
+			return;
+		}
+
+		var state = function ( category ) {
+			return consent[ category ] ? 'granted' : 'denied';
+		};
+
+		window.gtag( 'consent', 'update', {
+			ad_storage: state( 'marketing' ),
+			ad_user_data: state( 'marketing' ),
+			ad_personalization: state( 'marketing' ),
+			analytics_storage: state( 'analytics' ),
+			functionality_storage: state( 'functional' ),
+			personalization_storage: state( 'functional' ),
+			security_storage: 'granted'
 		} );
 	}
 
@@ -259,6 +286,7 @@
 	var stored = getStoredConsent();
 	if ( stored ) {
 		applyConsent( stored );
+		pushConsentMode( stored );
 	} else {
 		showBanner();
 	}

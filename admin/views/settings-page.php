@@ -179,6 +179,18 @@ $konsentra_opt = KONSENTRA_OPTION;
 								<code class="cp-code">&lt;script type="text/plain" data-cp-category="analytics" src="..."&gt;&lt;/script&gt;</code>
 							</td>
 						</tr>
+						<tr>
+							<th scope="row"><?php esc_html_e( 'Google Consent Mode v2', 'konsentra' ); ?></th>
+							<td>
+								<label>
+									<input type="checkbox" name="<?php echo esc_attr( $konsentra_opt ); ?>[consent_mode]" value="1" <?php checked( $settings['consent_mode'] ); ?> />
+									<?php esc_html_e( 'Signal consent to Google tags (Analytics, Ads)', 'konsentra' ); ?>
+								</label>
+								<p class="description">
+									<?php esc_html_e( 'Sets the Consent Mode default to denied before your Google tags load, then updates it to match the visitor\'s choice. Maps the Analytics category to analytics_storage and the Marketing category to the ad_storage signals.', 'konsentra' ); ?>
+								</p>
+							</td>
+						</tr>
 					</table>
 				</div>
 

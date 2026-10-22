@@ -4,10 +4,10 @@ All notable changes to Konsentra are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.4] - 2026-08-13
+## [1.1.0] - 2026-10-22
 
-### Fixed
-- The "Translation loading was triggered too early" notice in the debug log. The banner was built on `plugins_loaded`, and reading its default wording asked WordPress for translations before it was ready to serve them. It now waits for `init`, where WordPress expects this to happen. Nothing changes on the banner, your settings, or the front end — if you run with `WP_DEBUG` on, the log just gets quieter.
+### Added
+- Google Consent Mode v2 support. A new toggle under Script blocking sets the consent default to denied before Google tags load, then updates it to match the visitor's choice. Analytics maps to `analytics_storage`; Marketing maps to `ad_storage`, `ad_user_data` and `ad_personalization`.
 
 ## [1.0.3] - 2026-08-07
 

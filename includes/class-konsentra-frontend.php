@@ -32,6 +32,11 @@ class Konsentra_Frontend {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'wp_footer', array( $this, 'render_banner' ) );
 
+		// Google Consent Mode v2: set the default (denied) state before tags load.
+		if ( ! empty( $this->settings['consent_mode'] ) ) {
+			add_action( 'wp_head', array( $this, 'consent_mode_default' ), 1 );
+		}
+
 		// Shortcode so a "Cookie settings" link can be placed anywhere.
 		add_shortcode( 'konsentra_settings', array( $this, 'settings_link_shortcode' ) );
 
@@ -76,8 +81,48 @@ class Konsentra_Frontend {
 				'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
 				'nonce'        => wp_create_nonce( 'konsentra_log' ),
 				'categories'   => array( 'necessary', 'functional', 'analytics', 'marketing' ),
+				'consentMode'  => ! empty( $this->settings['consent_mode'] ),
 			)
 		);
+	}
+
+	/**
+	 * Output the Google Consent Mode v2 default state in the document head,
+	 * before any Google tags run. Returning visitors with a stored decision
+	 * get that reflected immediately; everyone else starts denied.
+	 *
+	 * @return void
+	 */
+	public function consent_mode_default() {
+		$stored = array();
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Reading a stored consent cookie, not processing a form.
+		if ( isset( $_COOKIE[ KONSENTRA_COOKIE ] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$decoded = json_decode( sanitize_text_field( wp_unslash( $_COOKIE[ KONSENTRA_COOKIE ] ) ), true );
+			if ( is_array( $decoded ) ) {
+				$stored = $decoded;
+			}
+		}
+
+		$grant = function ( $category ) use ( $stored ) {
+			return ! empty( $stored[ $category ] ) ? 'granted' : 'denied';
+		};
+
+		$state = array(
+			'ad_storage'              => $grant( 'marketing' ),
+			'ad_user_data'            => $grant( 'marketing' ),
+			'ad_personalization'      => $grant( 'marketing' ),
+			'analytics_storage'       => $grant( 'analytics' ),
+			'functionality_storage'   => $grant( 'functional' ),
+			'personalization_storage' => $grant( 'functional' ),
+			'security_storage'        => 'granted',
+		);
+
+		if ( empty( $stored ) ) {
+			$state['wait_for_update'] = 500;
+		}
+
+		echo "<script id=\"konsentra-consent-mode\">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default'," . wp_json_encode( $state ) . ');</script>' . "\n";
 	}
 
 	/**
