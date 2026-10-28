@@ -9,7 +9,7 @@ Give visitors a real choice about cookies, and keep tracking scripts on hold unt
 ![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-7.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![License](https://img.shields.io/badge/License-GPL%20v2-3DA639?style=for-the-badge&logo=gnu&logoColor=white)
-![Version](https://img.shields.io/badge/Version-1.0.3-2F80ED?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.1.1-2F80ED?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-none-FF6B6B?style=for-the-badge)
 
 </div>
@@ -132,21 +132,27 @@ Konsentra handles the consent side of things: the banner, the categories, and ho
 
 ## 📝 Changelog
 
+### 1.1.1
+- Tested and confirmed compatible with WordPress 7.1.4.
+
+### 1.1.0
+- New: Google Consent Mode v2 support. Turn it on under Script blocking and Konsentra sets the consent default to denied before your Google tags load, then updates it to match what the visitor chooses. The Analytics category maps to analytics_storage and the Marketing category to the ad_storage, ad_user_data and ad_personalization signals, so Google Analytics and Ads respect consent out of the box.
+
+### 1.0.4
+- Fixed the "Translation loading was triggered too early" notice in the debug log. The banner was being built on plugins_loaded, and reading its default wording asked WordPress for translations before it was ready to serve them. It now waits for init, which is where WordPress expects this to happen.
+- No change to the banner, your settings or anything on the front end. If you run with WP_DEBUG on, your log just gets a lot quieter.
+
+### 1.0.3
+- Housekeeping: refreshed the icon, banner, and screenshots. No functional changes.
+
+### 1.0.2
+- Housekeeping: refreshed the plugin directory assets. No functional changes.
+
 ### 1.0.1
-- Brightened the banner message text for better readability on the dark background
+- Brightened the banner message text for better readability on the dark background.
 
 ### 1.0.0
-- First public release
-- Consent banner with bottom, top, and corner placements
-- Accept all, reject all, and a per-category preferences panel
-- Four cookie categories: necessary, functional, analytics, marketing
-- Automatic blocking of tagged scripts until consent is granted
-- Colour picker, custom text, and button labels in the admin
-- `[konsentra_settings]` shortcode to reopen preferences
-- Optional anonymised consent logging (hashed IP only)
-- `konsentra:updated` JavaScript event for developers
-- Translation ready with a bundled `.pot` file
-- Clean uninstall on single site and multisite
+- Initial release.
 
 ## 🤝 Contributing
 
