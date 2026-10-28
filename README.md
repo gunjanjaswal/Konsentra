@@ -132,6 +132,8 @@ Konsentra handles the consent side of things: the banner, the categories, and ho
 
 ## 📝 Changelog
 
+The full changelog lives in [`readme.txt`](readme.txt). Recent releases:
+
 ### 1.1.1
 - Tested and confirmed compatible with WordPress 7.1.4.
 
@@ -147,12 +149,6 @@ Konsentra handles the consent side of things: the banner, the categories, and ho
 
 ### 1.0.2
 - Housekeeping: refreshed the plugin directory assets. No functional changes.
-
-### 1.0.1
-- Brightened the banner message text for better readability on the dark background.
-
-### 1.0.0
-- Initial release.
 
 ## 🤝 Contributing
 
