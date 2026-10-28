@@ -3,9 +3,9 @@ Contributors: gunjanjaswal
 Donate link: https://ko-fi.com/gunjanjaswal
 Tags: gdpr, cookie consent, cookie banner, privacy, consent
 Requires at least: 5.8
-Tested up to: 7.1
+Tested up to: 7.1.4
 Requires PHP: 7.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ Add the `[konsentra_settings]` shortcode anywhere, for example in your footer or
 3. The settings screen in the WordPress admin.
 
 == Changelog ==
+
+= 1.1.1 =
+* Tested and confirmed compatible with WordPress 7.1.4.
 
 = 1.1.0 =
 * New: Google Consent Mode v2 support. Turn it on under Script blocking and Konsentra sets the consent default to denied before your Google tags load, then updates it to match what the visitor chooses. The Analytics category maps to analytics_storage and the Marketing category to the ad_storage, ad_user_data and ad_personalization signals, so Google Analytics and Ads respect consent out of the box.
